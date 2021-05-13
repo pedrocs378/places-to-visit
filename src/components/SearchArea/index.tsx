@@ -9,6 +9,14 @@ export function SearchArea() {
 		<Container>
 			<Content>
 				<div>
+					<label htmlFor="country">País</label>
+					<input
+						id="country"
+						type="text"
+						placeholder="Selecione"
+					/>
+				</div>
+				<div>
 					<label htmlFor="place">Local</label>
 					<input
 						id="place"

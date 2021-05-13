@@ -2,15 +2,18 @@ import styled from "styled-components"
 
 export const Container = styled.div`
 	background: var(--green-500);
-	padding: 4rem 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 3rem 0;
 
 	@media (min-width: 720px) {
+		padding: 0;
 		height: 12.688rem;
 	}
 `
 
 export const Content = styled.form`
-	height: 100%;
 	width: 100%;
 	max-width: 1440px;
 	margin: 0 auto;
@@ -18,7 +21,6 @@ export const Content = styled.form`
 
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	justify-content: center;
 
 	div {
@@ -48,6 +50,7 @@ export const Content = styled.form`
 
 	@media (min-width: 720px) {
 		flex-direction: row;
+		align-items: center;
 
 		div {
 			margin-bottom: 0;
