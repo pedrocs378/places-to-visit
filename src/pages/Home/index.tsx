@@ -1,15 +1,20 @@
 
 import { Header } from '../../components/Header'
+import { SearchArea } from '../../components/SearchArea'
 
-import { Container } from './styles'
+import {
+	Container,
+} from './styles'
 
 export function Home() {
 
 	return (
-		<Container>
+		<>
 			<Header />
 
-			Home
-		</Container>
+			<Container>
+				<SearchArea />
+			</Container>
+		</>
 	)
 }
