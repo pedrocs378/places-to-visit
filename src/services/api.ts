@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const api = axios.create({
-	baseURL: 'https://restcountries.eu/rest/v2'
+	baseURL: 'http://localhost:3333'
 })

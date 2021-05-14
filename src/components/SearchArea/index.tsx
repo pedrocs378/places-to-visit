@@ -21,15 +21,6 @@ export function SearchArea() {
 	const [place, setPlace] = useState('')
 	const [goal, setGoal] = useState('')
 
-	const countriesOptions: CountrySelectProps[] = useMemo(() => {
-		return countries.map(country => {
-			return {
-				value: country.name,
-				label: country.translations.br
-			}
-		})
-	}, [countries])
-
 	async function handleSubmit(event: FormEvent) {
 		event.preventDefault()
 
@@ -45,7 +36,6 @@ export function SearchArea() {
 			}
 
 			await createPlace({
-				id: String(Math.random()),
 				name: place,
 				goal,
 				country
@@ -59,6 +49,15 @@ export function SearchArea() {
 		}
 	}
 
+	const countriesOptions: CountrySelectProps[] = useMemo(() => {
+		return countries.map(country => {
+			return {
+				value: country.name,
+				label: country.translations.br
+			}
+		})
+	}, [countries])
+
 	return (
 		<Container>
 			<Content>
@@ -68,6 +67,7 @@ export function SearchArea() {
 						classNamePrefix="react-select"
 						isSearchable={false}
 						isClearable={true}
+						isLoading={countries.length === 0}
 						placeholder="Selecione"
 						options={countriesOptions}
 						value={countrySelected}
@@ -88,9 +88,8 @@ export function SearchArea() {
 				<div className="goal">
 					<label htmlFor="goal">Meta</label>
 					<InputMask
-						mask="99/9999"
 						name="goal"
-						type="text"
+						mask="99/9999"
 						placeholder="mês/ano"
 						value={goal}
 						onChange={(event) => setGoal(event.target.value)}

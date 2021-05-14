@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 
-import { api } from "../services/api";
+import { countriesApi } from "../services/countriesApi";
 
 export interface Country {
 	numericCode: string
@@ -29,7 +29,7 @@ export function CountriesProvider({ children }: CountriesProviderProps) {
 	})
 
 	useEffect(() => {
-		api.get('/all').then(response => {
+		countriesApi.get<Country[]>('/all').then(response => {
 			setCountries(response.data)
 
 			localStorage.setItem('@FrontendChallenge.countries', JSON.stringify(response.data))

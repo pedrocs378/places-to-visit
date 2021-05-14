@@ -72,6 +72,7 @@ export const Content = styled.form`
 `
 
 export const CountriesSelect = styled(Select)`
+	
 	.react-select__control {
 		border: 0;
 		border-radius: 7px;
@@ -79,6 +80,7 @@ export const CountriesSelect = styled(Select)`
 		cursor: pointer;
 		padding: 0 1rem;
 		height: 3rem;
+		
 		font-weight: 400;
 
 		&:hover {
@@ -98,7 +100,7 @@ export const CountriesSelect = styled(Select)`
 	.react-select__indicator-separator {
 		display: none;
 	}
-
+	
 	.react-select__dropdown-indicator {
 		svg {
 			height: 18px;
