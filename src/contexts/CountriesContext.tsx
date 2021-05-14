@@ -2,7 +2,7 @@ import { createContext, ReactNode, useContext, useEffect, useState } from "react
 
 import { api } from "../services/api";
 
-interface Country {
+export interface Country {
 	numericCode: string
 	name: string
 	translations: {

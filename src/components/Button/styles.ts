@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { shade } from 'polished'
 
 export const Container = styled.button`
 	height: 3rem;
@@ -10,6 +11,11 @@ export const Container = styled.button`
 	font-size: 1.125rem;
 	background: var(--green-600);
 	color: var(--white);
+	transition: background-color 0.2s;
+
+	&:hover {
+		background: ${shade(0.2, '#006C18')};
+	}
 
 	@media (min-width: 720px) {
 		align-self: flex-end;

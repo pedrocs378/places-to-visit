@@ -81,8 +81,13 @@ export const CountriesSelect = styled(Select)`
 		height: 3rem;
 		font-weight: 400;
 
-		display: flex;
-		justify-content: center;
+		&:hover {
+			.react-select__dropdown-indicator {
+				svg {
+					color: var(--black);
+				}
+			}
+		}
 	}
 
 	.react-select__control--is-focused {
@@ -96,9 +101,11 @@ export const CountriesSelect = styled(Select)`
 
 	.react-select__dropdown-indicator {
 		svg {
-			height: 15px;
-			width: 15px;
+			height: 18px;
+			width: 18px;
 			color: var(--gray-750);
+
+			transition: color 0.2s;
 		}
 	}
 

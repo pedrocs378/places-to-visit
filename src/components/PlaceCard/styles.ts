@@ -1,3 +1,4 @@
+import { shade } from "polished";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -68,6 +69,11 @@ export const ButtonsController = styled.div`
 		background: transparent;
 		border: 0;
 		color: var(--gray-550);
+		transition: color 0.2s;
+
+		&:hover {
+			color: ${shade(0.3, '#868686')};
+		}
 
 		svg {
 			height: 24px;

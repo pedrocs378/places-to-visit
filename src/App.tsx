@@ -2,15 +2,18 @@
 import { Home } from './pages/Home'
 
 import { CountriesProvider } from './contexts/CountriesContext';
+import { PlacesProvider } from './contexts/PlacesContext';
 
 import GlobalStyles from './styles/global'
 
 function App() {
   return (
     <CountriesProvider>
-      <GlobalStyles />
+      <PlacesProvider>
+        <GlobalStyles />
 
-      <Home />
+        <Home />
+      </PlacesProvider>
     </CountriesProvider>
   );
 }

@@ -1,17 +1,27 @@
-import { FormEvent, useMemo } from 'react'
+import { FormEvent, useMemo, useState } from 'react'
 import InputMask from 'react-input-mask'
-import Select from 'react-select'
 
 import { useCountries } from '../../contexts/CountriesContext'
+import { usePlaces } from '../../contexts/PlacesContext'
 
 import { Button } from '../Button'
 
 import { Container, Content, CountriesSelect } from './styles'
 
+interface CountrySelectProps {
+	value: string
+	label: string
+}
+
 export function SearchArea() {
 	const countries = useCountries()
+	const { createPlace } = usePlaces()
 
-	const countriesOptions = useMemo(() => {
+	const [countrySelected, setCountrySelected] = useState<CountrySelectProps | null>(null)
+	const [place, setPlace] = useState('')
+	const [goal, setGoal] = useState('')
+
+	const countriesOptions: CountrySelectProps[] = useMemo(() => {
 		return countries.map(country => {
 			return {
 				value: country.name,
@@ -20,9 +30,33 @@ export function SearchArea() {
 		})
 	}, [countries])
 
-	function handleSubmit(event: FormEvent) {
+	async function handleSubmit(event: FormEvent) {
 		event.preventDefault()
 
+		if (!countrySelected || !place.trim() || !goal.trim()) {
+			return
+		}
+
+		try {
+			const country = countries.find(country => country.name === countrySelected.value)
+
+			if (!country) {
+				return
+			}
+
+			await createPlace({
+				id: String(Math.random()),
+				name: place,
+				goal,
+				country
+			})
+
+			setPlace('')
+			setGoal('')
+			setCountrySelected(null)
+		} catch {
+
+		}
 	}
 
 	return (
@@ -31,12 +65,13 @@ export function SearchArea() {
 				<div className="country">
 					<label htmlFor="country">País</label>
 					<CountriesSelect
-						id="country"
 						classNamePrefix="react-select"
 						isSearchable={false}
 						isClearable={true}
 						placeholder="Selecione"
 						options={countriesOptions}
+						value={countrySelected}
+						onChange={(data: CountrySelectProps | null) => setCountrySelected(data)}
 					/>
 				</div>
 				<div className="place">
@@ -46,16 +81,19 @@ export function SearchArea() {
 						name="place"
 						type="text"
 						placeholder="Digite o local que deseja conhecer"
+						value={place}
+						onChange={(event) => setPlace(event.target.value)}
 					/>
 				</div>
 				<div className="goal">
 					<label htmlFor="goal">Meta</label>
 					<InputMask
 						mask="99/9999"
-						id="goal"
 						name="goal"
 						type="text"
 						placeholder="mês/ano"
+						value={goal}
+						onChange={(event) => setGoal(event.target.value)}
 					/>
 				</div>
 
