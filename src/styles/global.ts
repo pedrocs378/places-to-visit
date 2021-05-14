@@ -1,5 +1,17 @@
 import { darken } from 'polished'
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, keyframes } from 'styled-components'
+
+const modalFadeAnimation = keyframes`
+	0% {
+		opacity: 0;
+		transform: translateY(-5%);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+`
 
 export default createGlobalStyle`
 	:root {
@@ -73,6 +85,8 @@ export default createGlobalStyle`
 		position: relative;
 		border-radius: 0.25rem;
 		outline: none;
+
+		animation: ${modalFadeAnimation} 700ms;
 	}
 
 	.react-modal-close {

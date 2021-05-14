@@ -1,3 +1,4 @@
+import { QueryClientProvider, QueryClient } from 'react-query'
 
 import { Home } from './pages/Home'
 
@@ -6,15 +7,19 @@ import { PlacesProvider } from './contexts/PlacesContext';
 
 import GlobalStyles from './styles/global'
 
+const queryClient = new QueryClient()
+
 function App() {
   return (
-    <CountriesProvider>
-      <PlacesProvider>
-        <GlobalStyles />
+    <QueryClientProvider client={queryClient}>
+      <CountriesProvider>
+        <PlacesProvider>
+          <GlobalStyles />
 
-        <Home />
-      </PlacesProvider>
-    </CountriesProvider>
+          <Home />
+        </PlacesProvider>
+      </CountriesProvider>
+    </QueryClientProvider>
   );
 }
 

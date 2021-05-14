@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import Select from 'react-select'
+import { shade } from "polished"
 
 export const Container = styled.div`
 	background: var(--green-500);
@@ -132,11 +133,11 @@ export const CountriesSelect = styled(Select)`
 	}
 
 	.react-select__option--is-focused {
-		background-color: var(--gray-400);
+		background-color: ${shade(0.1, '#fff')};
 	}
 
 	.react-select__option--is-selected {
-		background-color: var(--gray-400);
+		background-color: ${shade(0.1, '#fff')};
 		color: var(--black);
 	}
 

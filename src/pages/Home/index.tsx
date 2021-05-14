@@ -36,7 +36,6 @@ export function Home() {
 		try {
 			await deletePlace(id)
 		} catch {
-
 		}
 	}, [deletePlace])
 
