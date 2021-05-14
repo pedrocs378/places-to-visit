@@ -13,6 +13,7 @@ export interface Place {
 interface PlacesContextData {
 	places: Place[]
 	createPlace: (data: Omit<Place, 'id'>) => Promise<void>
+	updatePlace: (data: Place) => Promise<void>
 	deletePlace: (id: string) => Promise<void>
 }
 
@@ -31,6 +32,20 @@ export function PlacesProvider({ children }: PlacesProviderProps) {
 		setPlaces([...places, response.data])
 	}
 
+	async function updatePlace(data: Place) {
+		const response = await api.put(`/places/${data.id}`, { ...data })
+
+		const placesUpdated = places.map(place => {
+			if (place.id === data.id) {
+				return response.data
+			}
+
+			return place
+		})
+
+		setPlaces(placesUpdated)
+	}
+
 	async function deletePlace(id: string) {
 		await api.delete(`/places/${id}`)
 
@@ -46,7 +61,7 @@ export function PlacesProvider({ children }: PlacesProviderProps) {
 	}, [])
 
 	return (
-		<PlacesContext.Provider value={{ places, createPlace, deletePlace }}>
+		<PlacesContext.Provider value={{ places, createPlace, updatePlace, deletePlace }}>
 			{children}
 		</PlacesContext.Provider>
 	)

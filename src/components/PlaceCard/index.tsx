@@ -19,11 +19,19 @@ export function PlaceCard({ place, onDelete, onUpdate }: PlaceCardProps) {
 					<img src={place.country.flag} alt={place.country.name} />
 
 					<ButtonsController>
-						<button type="button" onClick={() => onUpdate && onUpdate()}>
+						<button
+							type="button"
+							title="Editar"
+							onClick={() => onUpdate && onUpdate()}
+						>
 							<MdEdit />
 						</button>
 
-						<button type="button" onClick={() => onDelete && onDelete()}>
+						<button
+							type="button"
+							title="Excluir"
+							onClick={() => onDelete && onDelete()}
+						>
 							<MdClose />
 						</button>
 					</ButtonsController>
