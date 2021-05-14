@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import Select from 'react-select'
 
 export const Container = styled.div`
 	background: var(--green-500);
@@ -23,7 +24,7 @@ export const Content = styled.form`
 	flex-direction: column;
 	justify-content: center;
 
-	div {
+	> div {
 		width: 100%;
 		margin-bottom: 1.5rem;
 
@@ -52,8 +53,87 @@ export const Content = styled.form`
 		flex-direction: row;
 		align-items: center;
 
-		div {
+		> div {
 			margin-bottom: 0;
+			margin-right: 2.125rem;
+
+			&.country {
+				max-width: 18.938rem;
+			}
+			&.place {
+				max-width: 28.438rem;
+			}
+			&.goal {
+				max-width: 14.875rem;
+			}
+		}
+		
+	}
+`
+
+export const CountriesSelect = styled(Select)`
+	.react-select__control {
+		border: 0;
+		border-radius: 7px;
+		background: var(--white);
+		cursor: pointer;
+		padding: 0 1rem;
+		height: 3rem;
+		font-weight: 400;
+
+		display: flex;
+		justify-content: center;
+	}
+
+	.react-select__control--is-focused {
+		background: var(--white);
+		box-shadow: none;
+	}
+
+	.react-select__indicator-separator {
+		display: none;
+	}
+
+	.react-select__dropdown-indicator {
+		svg {
+			height: 15px;
+			width: 15px;
+			color: var(--gray-750);
+		}
+	}
+
+	.react-select__placeholder {
+		color: var(--gray-550);
+	}
+
+	.react-select__single-value {
+		color: var(--black);
+	}
+
+	.react-select__menu {
+		background-color: var(--white);
+		color: var(--black);
+		font-weight: 400;
+		padding: 0.3rem 0;
+	}
+
+	.react-select__option {
+		cursor: pointer;
+		padding: 1rem 2rem;
+	}
+
+	.react-select__option--is-focused {
+		background-color: var(--gray-400);
+	}
+
+	.react-select__option--is-selected {
+		background-color: var(--gray-400);
+		color: var(--black);
+	}
+
+	@media (min-width: 720px) {
+		.react-select__option {
+			padding: 0.6rem 2rem;
 		}
 	}
 `

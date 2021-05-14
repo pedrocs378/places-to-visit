@@ -1,10 +1,23 @@
-import { FormEvent } from 'react'
+import { FormEvent, useMemo } from 'react'
+import InputMask from 'react-input-mask'
+
+import { useCountries } from '../../contexts/CountriesContext'
 
 import { Button } from '../Button'
 
-import { Container, Content } from './styles'
+import { Container, Content, CountriesSelect } from './styles'
 
 export function SearchArea() {
+	const countries = useCountries()
+
+	const countriesOptions = useMemo(() => {
+		return countries.map(country => {
+			return {
+				value: country.name,
+				label: country.translations.br
+			}
+		})
+	}, [countries])
 
 	function handleSubmit(event: FormEvent) {
 		event.preventDefault()
@@ -14,15 +27,17 @@ export function SearchArea() {
 	return (
 		<Container>
 			<Content>
-				<div>
+				<div className="country">
 					<label htmlFor="country">País</label>
-					<input
-						id="country"
-						type="text"
+					<CountriesSelect
+						classNamePrefix="react-select"
+						isSearchable={false}
+						isClearable={true}
 						placeholder="Selecione"
+						options={countriesOptions}
 					/>
 				</div>
-				<div>
+				<div className="place">
 					<label htmlFor="place">Local</label>
 					<input
 						id="place"
@@ -31,9 +46,10 @@ export function SearchArea() {
 						placeholder="Digite o local que deseja conhecer"
 					/>
 				</div>
-				<div>
+				<div className="goal">
 					<label htmlFor="goal">Meta</label>
-					<input
+					<InputMask
+						mask="99/9999"
 						id="goal"
 						name="goal"
 						type="text"
