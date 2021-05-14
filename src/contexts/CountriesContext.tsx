@@ -18,11 +18,21 @@ interface CountriesProviderProps {
 const CountriesContext = createContext<Country[]>([])
 
 export function CountriesProvider({ children }: CountriesProviderProps) {
-	const [countries, setCountries] = useState<Country[]>([])
+	const [countries, setCountries] = useState<Country[]>(() => {
+		const countriesStoraged = localStorage.getItem('@FrontendChallenge.countries')
+
+		if (countriesStoraged) {
+			return JSON.parse(countriesStoraged)
+		}
+
+		return []
+	})
 
 	useEffect(() => {
 		api.get('/all').then(response => {
 			setCountries(response.data)
+
+			localStorage.setItem('@FrontendChallenge.countries', JSON.stringify(response.data))
 		})
 	}, [])
 

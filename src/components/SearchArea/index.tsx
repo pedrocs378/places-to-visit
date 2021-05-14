@@ -1,5 +1,6 @@
 import { FormEvent, useMemo } from 'react'
 import InputMask from 'react-input-mask'
+import Select from 'react-select'
 
 import { useCountries } from '../../contexts/CountriesContext'
 
@@ -30,6 +31,7 @@ export function SearchArea() {
 				<div className="country">
 					<label htmlFor="country">País</label>
 					<CountriesSelect
+						id="country"
 						classNamePrefix="react-select"
 						isSearchable={false}
 						isClearable={true}
