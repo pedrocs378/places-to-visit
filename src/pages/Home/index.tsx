@@ -1,17 +1,36 @@
+import { useCallback, useState } from 'react'
 
-import { useCallback } from 'react'
 import { Header } from '../../components/Header'
 import { PlaceCard } from '../../components/PlaceCard'
 import { SearchArea } from '../../components/SearchArea'
-import { usePlaces } from '../../contexts/PlacesContext'
+import { UpdatePlaceModal } from '../../components/UpdatePlaceModal'
+
+import { Place, usePlaces } from '../../contexts/PlacesContext'
 
 import {
 	Container,
 	PlaceCardsContainer,
 } from './styles'
 
+interface IsUpdatePlaceModalOpenProps {
+	opened: boolean
+	data: Place
+}
+
 export function Home() {
+	const [isUpdatePlaceModalOpen, setIsUpdatePlaceModalOpen] = useState<IsUpdatePlaceModalOpenProps>({
+		opened: false,
+		data: {} as Place
+	})
+
 	const { places, deletePlace } = usePlaces()
+
+	function handleCloseModal() {
+		setIsUpdatePlaceModalOpen({
+			opened: false,
+			data: {} as Place
+		})
+	}
 
 	const handleDeletePlace = useCallback(async (id: string) => {
 		try {
@@ -21,8 +40,21 @@ export function Home() {
 		}
 	}, [deletePlace])
 
+	const handleEditPlace = useCallback((data: Place) => {
+		setIsUpdatePlaceModalOpen({
+			opened: true,
+			data
+		})
+	}, [])
+
 	return (
 		<>
+			<UpdatePlaceModal
+				isOpen={isUpdatePlaceModalOpen.opened}
+				data={isUpdatePlaceModalOpen.data}
+				onRequestClose={handleCloseModal}
+			/>
+
 			<Header />
 
 			<Container>
@@ -35,6 +67,7 @@ export function Home() {
 								key={place.id}
 								place={place}
 								onDelete={() => handleDeletePlace(place.id)}
+								onUpdate={() => handleEditPlace(place)}
 							/>
 						)
 					})}

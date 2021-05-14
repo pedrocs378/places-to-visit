@@ -20,6 +20,7 @@ export function SearchArea() {
 	const [countrySelected, setCountrySelected] = useState<CountrySelectProps | null>(null)
 	const [place, setPlace] = useState('')
 	const [goal, setGoal] = useState('')
+	const [isLoading, setIsLoading] = useState(false)
 
 	async function handleSubmit(event: FormEvent) {
 		event.preventDefault()
@@ -29,6 +30,8 @@ export function SearchArea() {
 		}
 
 		try {
+			setIsLoading(true)
+
 			const country = countries.find(country => country.name === countrySelected.value)
 
 			if (!country) {
@@ -44,8 +47,8 @@ export function SearchArea() {
 			setPlace('')
 			setGoal('')
 			setCountrySelected(null)
-		} catch {
-
+		} finally {
+			setIsLoading(false)
 		}
 	}
 
@@ -88,6 +91,7 @@ export function SearchArea() {
 				<div className="goal">
 					<label htmlFor="goal">Meta</label>
 					<InputMask
+						id="goal"
 						name="goal"
 						mask="99/9999"
 						placeholder="mês/ano"
@@ -96,7 +100,7 @@ export function SearchArea() {
 					/>
 				</div>
 
-				<Button type="submit" onClick={handleSubmit}>
+				<Button type="submit" isLoading={isLoading} onClick={handleSubmit}>
 					Adicionar
 				</Button>
 			</Content>

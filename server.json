@@ -1,50 +1,60 @@
 {
   "places": [
     {
-      "name": "São Paulo",
-      "goal": "02/2026",
+      "name": "Balneario Camboriu",
+      "goal": "04/2022",
       "country": {
-        "name": "Angola",
+        "name": "Brazil",
         "topLevelDomain": [
-          ".ao"
+          ".br"
         ],
-        "alpha2Code": "AO",
-        "alpha3Code": "AGO",
+        "alpha2Code": "BR",
+        "alpha3Code": "BRA",
         "callingCodes": [
-          "244"
+          "55"
         ],
-        "capital": "Luanda",
+        "capital": "Brasília",
         "altSpellings": [
-          "AO",
-          "República de Angola",
-          "ʁɛpublika de an'ɡɔla"
+          "BR",
+          "Brasil",
+          "Federative Republic of Brazil",
+          "República Federativa do Brasil"
         ],
-        "region": "Africa",
-        "subregion": "Middle Africa",
-        "population": 25868000,
+        "region": "Americas",
+        "subregion": "South America",
+        "population": 206135893,
         "latlng": [
-          -12.5,
-          18.5
+          -10,
+          -55
         ],
-        "demonym": "Angolan",
-        "area": 1246700,
-        "gini": 58.6,
+        "demonym": "Brazilian",
+        "area": 8515767,
+        "gini": 54.7,
         "timezones": [
-          "UTC+01:00"
+          "UTC-05:00",
+          "UTC-04:00",
+          "UTC-03:00",
+          "UTC-02:00"
         ],
         "borders": [
-          "COG",
-          "COD",
-          "ZMB",
-          "NAM"
+          "ARG",
+          "BOL",
+          "COL",
+          "GUF",
+          "GUY",
+          "PRY",
+          "PER",
+          "SUR",
+          "URY",
+          "VEN"
         ],
-        "nativeName": "Angola",
-        "numericCode": "024",
+        "nativeName": "Brasil",
+        "numericCode": "076",
         "currencies": [
           {
-            "code": "AOA",
-            "name": "Angolan kwanza",
-            "symbol": "Kz"
+            "code": "BRL",
+            "name": "Brazilian real",
+            "symbol": "R$"
           }
         ],
         "languages": [
@@ -56,116 +66,38 @@
           }
         ],
         "translations": {
-          "de": "Angola",
-          "es": "Angola",
-          "fr": "Angola",
-          "ja": "アンゴラ",
-          "it": "Angola",
-          "br": "Angola",
-          "pt": "Angola",
-          "nl": "Angola",
-          "hr": "Angola",
-          "fa": "آنگولا"
+          "de": "Brasilien",
+          "es": "Brasil",
+          "fr": "Brésil",
+          "ja": "ブラジル",
+          "it": "Brasile",
+          "br": "Brasil",
+          "pt": "Brasil",
+          "nl": "Brazilië",
+          "hr": "Brazil",
+          "fa": "برزیل"
         },
-        "flag": "https://restcountries.eu/data/ago.svg",
+        "flag": "https://restcountries.eu/data/bra.svg",
         "regionalBlocs": [
           {
-            "acronym": "AU",
-            "name": "African Union",
-            "otherAcronyms": [],
+            "acronym": "USAN",
+            "name": "Union of South American Nations",
+            "otherAcronyms": [
+              "UNASUR",
+              "UNASUL",
+              "UZAN"
+            ],
             "otherNames": [
-              "الاتحاد الأفريقي",
-              "Union africaine",
-              "União Africana",
-              "Unión Africana",
-              "Umoja wa Afrika"
+              "Unión de Naciones Suramericanas",
+              "União de Nações Sul-Americanas",
+              "Unie van Zuid-Amerikaanse Naties",
+              "South American Union"
             ]
           }
         ],
-        "cioc": "ANG"
+        "cioc": "BRA"
       },
       "id": 1
-    },
-    {
-      "name": "Teste",
-      "goal": "02/2025",
-      "country": {
-        "name": "Albania",
-        "topLevelDomain": [
-          ".al"
-        ],
-        "alpha2Code": "AL",
-        "alpha3Code": "ALB",
-        "callingCodes": [
-          "355"
-        ],
-        "capital": "Tirana",
-        "altSpellings": [
-          "AL",
-          "Shqipëri",
-          "Shqipëria",
-          "Shqipnia"
-        ],
-        "region": "Europe",
-        "subregion": "Southern Europe",
-        "population": 2886026,
-        "latlng": [
-          41,
-          20
-        ],
-        "demonym": "Albanian",
-        "area": 28748,
-        "gini": 34.5,
-        "timezones": [
-          "UTC+01:00"
-        ],
-        "borders": [
-          "MNE",
-          "GRC",
-          "MKD",
-          "KOS"
-        ],
-        "nativeName": "Shqipëria",
-        "numericCode": "008",
-        "currencies": [
-          {
-            "code": "ALL",
-            "name": "Albanian lek",
-            "symbol": "L"
-          }
-        ],
-        "languages": [
-          {
-            "iso639_1": "sq",
-            "iso639_2": "sqi",
-            "name": "Albanian",
-            "nativeName": "Shqip"
-          }
-        ],
-        "translations": {
-          "de": "Albanien",
-          "es": "Albania",
-          "fr": "Albanie",
-          "ja": "アルバニア",
-          "it": "Albania",
-          "br": "Albânia",
-          "pt": "Albânia",
-          "nl": "Albanië",
-          "hr": "Albanija",
-          "fa": "آلبانی"
-        },
-        "flag": "https://restcountries.eu/data/alb.svg",
-        "regionalBlocs": [
-          {
-            "acronym": "CEFTA",
-            "name": "Central European Free Trade Agreement",
-            "otherAcronyms": [],
-            "otherNames": []
-          }
-        ],
-        "cioc": "ALB"
-      },
-      "id": 2
     }
   ]
 }

@@ -1,16 +1,23 @@
 import { ButtonHTMLAttributes } from 'react'
+import Loading from 'react-loading'
 
 import { Container } from './styles'
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+	isLoading?: boolean
+}
 
-export function Button({ children, ...rest }: ButtonProps) {
+export function Button({ children, isLoading = false, ...rest }: ButtonProps) {
 
 	return (
 		<Container
 			{...rest}
 		>
-			{children}
+			{
+				isLoading
+					? <Loading type="spinningBubbles" height={20} width={20} color="var(--white)" />
+					: children
+			}
 		</Container>
 	)
 }

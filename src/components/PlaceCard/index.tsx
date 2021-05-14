@@ -7,9 +7,10 @@ import { Container, ButtonsController } from './styles'
 interface PlaceCardProps {
 	place: Place
 	onDelete?: () => void
+	onUpdate?: () => void
 }
 
-export function PlaceCard({ place, onDelete }: PlaceCardProps) {
+export function PlaceCard({ place, onDelete, onUpdate }: PlaceCardProps) {
 
 	return (
 		<Container>
@@ -18,7 +19,7 @@ export function PlaceCard({ place, onDelete }: PlaceCardProps) {
 					<img src={place.country.flag} alt={place.country.name} />
 
 					<ButtonsController>
-						<button type="button">
+						<button type="button" onClick={() => onUpdate && onUpdate()}>
 							<MdEdit />
 						</button>
 

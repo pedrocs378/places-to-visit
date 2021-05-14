@@ -13,6 +13,10 @@ export const Container = styled.button`
 	color: var(--white);
 	transition: background-color 0.2s;
 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
 	&:hover {
 		background: ${shade(0.2, '#006C18')};
 	}
