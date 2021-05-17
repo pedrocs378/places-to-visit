@@ -1,7 +1,8 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
-import { api } from "../services/api";
 
 import { Country } from './CountriesContext'
+
+import { api } from "../services/api";
 
 export interface Place {
 	id: string
@@ -12,6 +13,7 @@ export interface Place {
 
 interface PlacesContextData {
 	places: Place[]
+	isLoading: boolean
 	createPlace: (data: Omit<Place, 'id'>) => Promise<void>
 	updatePlace: (data: Place) => Promise<void>
 	deletePlace: (id: string) => Promise<void>
@@ -25,6 +27,7 @@ const PlacesContext = createContext({} as PlacesContextData)
 
 export function PlacesProvider({ children }: PlacesProviderProps) {
 	const [places, setPlaces] = useState<Place[]>([])
+	const [isLoading, setIsLoading] = useState(true)
 
 	async function createPlace(data: Omit<Place, 'id'>) {
 		const response = await api.post<Place>('/places', { ...data })
@@ -55,13 +58,16 @@ export function PlacesProvider({ children }: PlacesProviderProps) {
 	}
 
 	useEffect(() => {
-		api.get('/places').then(response => {
-			setPlaces(response.data)
-		})
+		api
+			.get('/places')
+			.then(response => {
+				setPlaces(response.data)
+			})
+			.finally(() => setIsLoading(false))
 	}, [])
 
 	return (
-		<PlacesContext.Provider value={{ places, createPlace, updatePlace, deletePlace }}>
+		<PlacesContext.Provider value={{ places, isLoading, createPlace, updatePlace, deletePlace }}>
 			{children}
 		</PlacesContext.Provider>
 	)

@@ -1,4 +1,5 @@
 import { MdEdit, MdClose } from 'react-icons/md'
+import Loading from 'react-loading'
 
 import { Place } from '../../contexts/PlacesContext'
 
@@ -6,11 +7,12 @@ import { Container, ButtonsController } from './styles'
 
 interface PlaceCardProps {
 	place: Place
+	isDeleting: boolean
 	onDelete?: () => void
 	onUpdate?: () => void
 }
 
-export function PlaceCard({ place, onDelete, onUpdate }: PlaceCardProps) {
+export function PlaceCard({ place, isDeleting, onDelete, onUpdate }: PlaceCardProps) {
 
 	return (
 		<Container>
@@ -32,7 +34,11 @@ export function PlaceCard({ place, onDelete, onUpdate }: PlaceCardProps) {
 							title="Excluir"
 							onClick={() => onDelete && onDelete()}
 						>
-							<MdClose />
+							{isDeleting ? (
+								<Loading type="spinningBubbles" color="var(--gray-550)" height={24} width={24} />
+							) : (
+								<MdClose />
+							)}
 						</button>
 					</ButtonsController>
 				</div>

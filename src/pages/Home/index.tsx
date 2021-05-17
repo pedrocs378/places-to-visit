@@ -1,10 +1,9 @@
 import { FormEvent, useCallback, useMemo, useState } from 'react'
-import ReactInputMask from 'react-input-mask'
+import Loading from 'react-loading'
 
 import { Button } from '../../components/Button'
 import { Header } from '../../components/Header'
 import { Input } from '../../components/Input'
-import { InputLabel } from '../../components/InputLabel'
 import { PlaceCard } from '../../components/PlaceCard'
 import { UpdatePlaceModal } from '../../components/UpdatePlaceModal'
 
@@ -13,13 +12,14 @@ import { Place, usePlaces } from '../../contexts/PlacesContext'
 
 import {
 	Container,
-	PlaceCardsContainer,
 	SearchArea,
 	SearchAreaContent,
 	CountriesSelect,
 	CountryInputLabel,
 	PlaceInputLabel,
 	GoalInputLabel,
+	PlaceCardsContainer,
+	LoadingContainer,
 } from './styles'
 
 interface CountrySelectProps {
@@ -34,12 +34,13 @@ interface IsUpdatePlaceModalOpenProps {
 
 export function Home() {
 	const countries = useCountries()
-	const { places, deletePlace, createPlace } = usePlaces()
+	const { places, isLoading, deletePlace, createPlace } = usePlaces()
 
 	const [countrySelected, setCountrySelected] = useState<CountrySelectProps | null>(null)
 	const [place, setPlace] = useState('')
 	const [goal, setGoal] = useState('')
-	const [isLoading, setIsLoading] = useState(false)
+	const [placeIdDeleting, setPlaceIdDeleting] = useState('')
+	const [isSaving, setIsSaving] = useState(false)
 	const [isUpdatePlaceModalOpen, setIsUpdatePlaceModalOpen] = useState<IsUpdatePlaceModalOpenProps>({
 		opened: false,
 		data: {} as Place
@@ -53,7 +54,7 @@ export function Home() {
 		}
 
 		try {
-			setIsLoading(true)
+			setIsSaving(true)
 
 			const country = countries.find(country => country.name === countrySelected.value)
 
@@ -71,7 +72,7 @@ export function Home() {
 			setGoal('')
 			setCountrySelected(null)
 		} finally {
-			setIsLoading(false)
+			setIsSaving(false)
 		}
 	}
 
@@ -84,8 +85,11 @@ export function Home() {
 
 	const handleDeletePlace = useCallback(async (id: string) => {
 		try {
+			setPlaceIdDeleting(id)
+
 			await deletePlace(id)
-		} catch {
+		} finally {
+			setPlaceIdDeleting('')
 		}
 	}, [deletePlace])
 
@@ -163,24 +167,36 @@ export function Home() {
 							/>
 						</GoalInputLabel>
 
-						<Button type="submit" isLoading={isLoading}>
+						<Button type="submit" isLoading={isSaving}>
 							Adicionar
 						</Button>
 					</SearchAreaContent>
 				</SearchArea>
 
-				<PlaceCardsContainer>
-					{places.map(place => {
-						return (
-							<PlaceCard
-								key={place.id}
-								place={place}
-								onDelete={() => handleDeletePlace(place.id)}
-								onUpdate={() => handleEditPlace(place)}
-							/>
-						)
-					})}
-				</PlaceCardsContainer>
+				{isLoading ? (
+					<LoadingContainer>
+						<Loading
+							type="bubbles"
+							color="var(--green-500)"
+							height={60}
+							width={60}
+						/>
+					</LoadingContainer>
+				) : (
+					<PlaceCardsContainer>
+						{places.map(place => {
+							return (
+								<PlaceCard
+									key={place.id}
+									place={place}
+									isDeleting={placeIdDeleting === place.id}
+									onDelete={() => handleDeletePlace(place.id)}
+									onUpdate={() => handleEditPlace(place)}
+								/>
+							)
+						})}
+					</PlaceCardsContainer>
+				)}
 			</Container>
 		</>
 	)
