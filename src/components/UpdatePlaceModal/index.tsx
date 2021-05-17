@@ -1,8 +1,9 @@
 import { FormEvent, useEffect, useState } from 'react'
 import Modal from 'react-modal'
 import { MdClose } from 'react-icons/md'
-import InputMask from 'react-input-mask'
 
+import { Input } from '../Input'
+import { InputLabel } from '../InputLabel'
 import { Button } from '../Button'
 
 import { Place, usePlaces } from '../../contexts/PlacesContext'
@@ -71,9 +72,11 @@ export function UpdatePlaceModal({ isOpen, data, onRequestClose }: UpdatePlaceMo
 				</div>
 
 				<main>
-					<div className="update-place">
-						<label htmlFor="update-place">Local</label>
-						<input
+					<InputLabel
+						htmlFor="update-place"
+						label="Local"
+					>
+						<Input
 							id="update-place"
 							type="text"
 							placeholder="Digite o local que deseja conhecer"
@@ -81,18 +84,22 @@ export function UpdatePlaceModal({ isOpen, data, onRequestClose }: UpdatePlaceMo
 							value={place}
 							onChange={(event) => setPlace(event.target.value)}
 						/>
-					</div>
-					<div className="update-goal">
-						<label htmlFor="update-goal">Meta</label>
-						<InputMask
+					</InputLabel>
+
+					<InputLabel
+						htmlFor="update-goal"
+						label="Meta"
+					>
+						<Input
+							hasMask
 							id="update-goal"
-							mask="99/9999"
+							type="text"
 							placeholder="mês/ano"
 							defaultValue={data.goal}
 							value={goal}
 							onChange={(event) => setGoal(event.target.value)}
 						/>
-					</div>
+					</InputLabel>
 				</main>
 
 				<Button

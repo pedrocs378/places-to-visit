@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.form`
-
-	
-
 	> div {
 		display: flex;
 		align-items: center;
@@ -27,26 +24,13 @@ export const Container = styled.form`
 
 		div {
 			width: 100%;
-			margin-bottom: 1.5rem;
-
-			display: flex;
-			flex-direction: column;
 
 			label {
 				color: var(--black);
-				margin-bottom: 3px;
-			}
+			}	
 
 			input {
-				height: 3rem;
 				border: 1px solid var(--black);
-				border-radius: 7px;
-				padding: 0 1.125rem;
-				font-size: 1rem;
-
-				&::placeholder {
-					color: var(--gray-550);
-				}
 			}
 		}
 	}
@@ -57,13 +41,11 @@ export const Container = styled.form`
 			flex-direction: row;
 
 			div {
-				margin-bottom: 0;
-				margin-right: 1rem;
 
-				&.update-place {
+				&:first-child {
 					width: 100%;
 				}
-				&.update-goal {
+				&:last-child {
 					width: 100%;
 					max-width: 8rem;
 				}

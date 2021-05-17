@@ -50,6 +50,10 @@ export const SearchAreaContent = styled.div`
 	flex-direction: column;
 	justify-content: center;
 
+	> div {
+		width: 100%;
+	}
+
 	@media (min-width: 720px) {
 		flex-direction: row;
 		align-items: center;
@@ -57,31 +61,18 @@ export const SearchAreaContent = styled.div`
 `
 
 export const CountryInputLabel = styled(InputLabel)`
-
-	@media (min-width: 720px) {
-		min-width: 11rem;
-	}
-
 	@media (min-width: 1180px) {
 		width: 18.938rem;	
 	}
 `
 
 export const PlaceInputLabel = styled(InputLabel)`
-	@media (min-width: 720px) {
-		min-width: 17.5rem;
-	}
-
 	@media (min-width: 1180px) {
 		width: 28.438rem;
 	}
 `
 
 export const GoalInputLabel = styled(InputLabel)`
-	@media (min-width: 720px) {
-		min-width: 7.6rem;
-	}
-
 	@media (min-width: 1180px) {
 		width: 14.875rem;
 	}
