@@ -98,6 +98,582 @@
         "cioc": "BRA"
       },
       "id": 1
+    },
+    {
+      "name": "Salar de Uyuni",
+      "goal": "04/2023",
+      "country": {
+        "name": "Bolivia (Plurinational State of)",
+        "topLevelDomain": [
+          ".bo"
+        ],
+        "alpha2Code": "BO",
+        "alpha3Code": "BOL",
+        "callingCodes": [
+          "591"
+        ],
+        "capital": "Sucre",
+        "altSpellings": [
+          "BO",
+          "Buliwya",
+          "Wuliwya",
+          "Plurinational State of Bolivia",
+          "Estado Plurinacional de Bolivia",
+          "Buliwya Mamallaqta",
+          "Wuliwya Suyu",
+          "Tetã Volívia"
+        ],
+        "region": "Americas",
+        "subregion": "South America",
+        "population": 10985059,
+        "latlng": [
+          -17,
+          -65
+        ],
+        "demonym": "Bolivian",
+        "area": 1098581,
+        "gini": 56.3,
+        "timezones": [
+          "UTC-04:00"
+        ],
+        "borders": [
+          "ARG",
+          "BRA",
+          "CHL",
+          "PRY",
+          "PER"
+        ],
+        "nativeName": "Bolivia",
+        "numericCode": "068",
+        "currencies": [
+          {
+            "code": "BOB",
+            "name": "Bolivian boliviano",
+            "symbol": "Bs."
+          }
+        ],
+        "languages": [
+          {
+            "iso639_1": "es",
+            "iso639_2": "spa",
+            "name": "Spanish",
+            "nativeName": "Español"
+          },
+          {
+            "iso639_1": "ay",
+            "iso639_2": "aym",
+            "name": "Aymara",
+            "nativeName": "aymar aru"
+          },
+          {
+            "iso639_1": "qu",
+            "iso639_2": "que",
+            "name": "Quechua",
+            "nativeName": "Runa Simi"
+          }
+        ],
+        "translations": {
+          "de": "Bolivien",
+          "es": "Bolivia",
+          "fr": "Bolivie",
+          "ja": "ボリビア多民族国",
+          "it": "Bolivia",
+          "br": "Bolívia",
+          "pt": "Bolívia",
+          "nl": "Bolivia",
+          "hr": "Bolivija",
+          "fa": "بولیوی"
+        },
+        "flag": "https://restcountries.eu/data/bol.svg",
+        "regionalBlocs": [
+          {
+            "acronym": "USAN",
+            "name": "Union of South American Nations",
+            "otherAcronyms": [
+              "UNASUR",
+              "UNASUL",
+              "UZAN"
+            ],
+            "otherNames": [
+              "Unión de Naciones Suramericanas",
+              "União de Nações Sul-Americanas",
+              "Unie van Zuid-Amerikaanse Naties",
+              "South American Union"
+            ]
+          }
+        ],
+        "cioc": "BOL"
+      },
+      "id": 2
+    },
+    {
+      "name": "Fortaleza",
+      "goal": "05/2022",
+      "country": {
+        "name": "Brazil",
+        "topLevelDomain": [
+          ".br"
+        ],
+        "alpha2Code": "BR",
+        "alpha3Code": "BRA",
+        "callingCodes": [
+          "55"
+        ],
+        "capital": "Brasília",
+        "altSpellings": [
+          "BR",
+          "Brasil",
+          "Federative Republic of Brazil",
+          "República Federativa do Brasil"
+        ],
+        "region": "Americas",
+        "subregion": "South America",
+        "population": 206135893,
+        "latlng": [
+          -10,
+          -55
+        ],
+        "demonym": "Brazilian",
+        "area": 8515767,
+        "gini": 54.7,
+        "timezones": [
+          "UTC-05:00",
+          "UTC-04:00",
+          "UTC-03:00",
+          "UTC-02:00"
+        ],
+        "borders": [
+          "ARG",
+          "BOL",
+          "COL",
+          "GUF",
+          "GUY",
+          "PRY",
+          "PER",
+          "SUR",
+          "URY",
+          "VEN"
+        ],
+        "nativeName": "Brasil",
+        "numericCode": "076",
+        "currencies": [
+          {
+            "code": "BRL",
+            "name": "Brazilian real",
+            "symbol": "R$"
+          }
+        ],
+        "languages": [
+          {
+            "iso639_1": "pt",
+            "iso639_2": "por",
+            "name": "Portuguese",
+            "nativeName": "Português"
+          }
+        ],
+        "translations": {
+          "de": "Brasilien",
+          "es": "Brasil",
+          "fr": "Brésil",
+          "ja": "ブラジル",
+          "it": "Brasile",
+          "br": "Brasil",
+          "pt": "Brasil",
+          "nl": "Brazilië",
+          "hr": "Brazil",
+          "fa": "برزیل"
+        },
+        "flag": "https://restcountries.eu/data/bra.svg",
+        "regionalBlocs": [
+          {
+            "acronym": "USAN",
+            "name": "Union of South American Nations",
+            "otherAcronyms": [
+              "UNASUR",
+              "UNASUL",
+              "UZAN"
+            ],
+            "otherNames": [
+              "Unión de Naciones Suramericanas",
+              "União de Nações Sul-Americanas",
+              "Unie van Zuid-Amerikaanse Naties",
+              "South American Union"
+            ]
+          }
+        ],
+        "cioc": "BRA"
+      },
+      "id": 3
+    },
+    {
+      "name": "Nova York",
+      "goal": "12/2022",
+      "country": {
+        "name": "United States of America",
+        "topLevelDomain": [
+          ".us"
+        ],
+        "alpha2Code": "US",
+        "alpha3Code": "USA",
+        "callingCodes": [
+          "1"
+        ],
+        "capital": "Washington, D.C.",
+        "altSpellings": [
+          "US",
+          "USA",
+          "United States of America"
+        ],
+        "region": "Americas",
+        "subregion": "Northern America",
+        "population": 323947000,
+        "latlng": [
+          38,
+          -97
+        ],
+        "demonym": "American",
+        "area": 9629091,
+        "gini": 48,
+        "timezones": [
+          "UTC-12:00",
+          "UTC-11:00",
+          "UTC-10:00",
+          "UTC-09:00",
+          "UTC-08:00",
+          "UTC-07:00",
+          "UTC-06:00",
+          "UTC-05:00",
+          "UTC-04:00",
+          "UTC+10:00",
+          "UTC+12:00"
+        ],
+        "borders": [
+          "CAN",
+          "MEX"
+        ],
+        "nativeName": "United States",
+        "numericCode": "840",
+        "currencies": [
+          {
+            "code": "USD",
+            "name": "United States dollar",
+            "symbol": "$"
+          }
+        ],
+        "languages": [
+          {
+            "iso639_1": "en",
+            "iso639_2": "eng",
+            "name": "English",
+            "nativeName": "English"
+          }
+        ],
+        "translations": {
+          "de": "Vereinigte Staaten von Amerika",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ合衆国",
+          "it": "Stati Uniti D'America",
+          "br": "Estados Unidos",
+          "pt": "Estados Unidos",
+          "nl": "Verenigde Staten",
+          "hr": "Sjedinjene Američke Države",
+          "fa": "ایالات متحده آمریکا"
+        },
+        "flag": "https://restcountries.eu/data/usa.svg",
+        "regionalBlocs": [
+          {
+            "acronym": "NAFTA",
+            "name": "North American Free Trade Agreement",
+            "otherAcronyms": [],
+            "otherNames": [
+              "Tratado de Libre Comercio de América del Norte",
+              "Accord de Libre-échange Nord-Américain"
+            ]
+          }
+        ],
+        "cioc": "USA"
+      },
+      "id": 4
+    },
+    {
+      "name": "Filadélfia",
+      "goal": "12/2022",
+      "country": {
+        "name": "United States of America",
+        "topLevelDomain": [
+          ".us"
+        ],
+        "alpha2Code": "US",
+        "alpha3Code": "USA",
+        "callingCodes": [
+          "1"
+        ],
+        "capital": "Washington, D.C.",
+        "altSpellings": [
+          "US",
+          "USA",
+          "United States of America"
+        ],
+        "region": "Americas",
+        "subregion": "Northern America",
+        "population": 323947000,
+        "latlng": [
+          38,
+          -97
+        ],
+        "demonym": "American",
+        "area": 9629091,
+        "gini": 48,
+        "timezones": [
+          "UTC-12:00",
+          "UTC-11:00",
+          "UTC-10:00",
+          "UTC-09:00",
+          "UTC-08:00",
+          "UTC-07:00",
+          "UTC-06:00",
+          "UTC-05:00",
+          "UTC-04:00",
+          "UTC+10:00",
+          "UTC+12:00"
+        ],
+        "borders": [
+          "CAN",
+          "MEX"
+        ],
+        "nativeName": "United States",
+        "numericCode": "840",
+        "currencies": [
+          {
+            "code": "USD",
+            "name": "United States dollar",
+            "symbol": "$"
+          }
+        ],
+        "languages": [
+          {
+            "iso639_1": "en",
+            "iso639_2": "eng",
+            "name": "English",
+            "nativeName": "English"
+          }
+        ],
+        "translations": {
+          "de": "Vereinigte Staaten von Amerika",
+          "es": "Estados Unidos",
+          "fr": "États-Unis",
+          "ja": "アメリカ合衆国",
+          "it": "Stati Uniti D'America",
+          "br": "Estados Unidos",
+          "pt": "Estados Unidos",
+          "nl": "Verenigde Staten",
+          "hr": "Sjedinjene Američke Države",
+          "fa": "ایالات متحده آمریکا"
+        },
+        "flag": "https://restcountries.eu/data/usa.svg",
+        "regionalBlocs": [
+          {
+            "acronym": "NAFTA",
+            "name": "North American Free Trade Agreement",
+            "otherAcronyms": [],
+            "otherNames": [
+              "Tratado de Libre Comercio de América del Norte",
+              "Accord de Libre-échange Nord-Américain"
+            ]
+          }
+        ],
+        "cioc": "USA"
+      },
+      "id": 5
+    },
+    {
+      "name": "Paris",
+      "goal": "04/2023",
+      "country": {
+        "name": "France",
+        "topLevelDomain": [
+          ".fr"
+        ],
+        "alpha2Code": "FR",
+        "alpha3Code": "FRA",
+        "callingCodes": [
+          "33"
+        ],
+        "capital": "Paris",
+        "altSpellings": [
+          "FR",
+          "French Republic",
+          "République française"
+        ],
+        "region": "Europe",
+        "subregion": "Western Europe",
+        "population": 66710000,
+        "latlng": [
+          46,
+          2
+        ],
+        "demonym": "French",
+        "area": 640679,
+        "gini": 32.7,
+        "timezones": [
+          "UTC-10:00",
+          "UTC-09:30",
+          "UTC-09:00",
+          "UTC-08:00",
+          "UTC-04:00",
+          "UTC-03:00",
+          "UTC+01:00",
+          "UTC+03:00",
+          "UTC+04:00",
+          "UTC+05:00",
+          "UTC+11:00",
+          "UTC+12:00"
+        ],
+        "borders": [
+          "AND",
+          "BEL",
+          "DEU",
+          "ITA",
+          "LUX",
+          "MCO",
+          "ESP",
+          "CHE"
+        ],
+        "nativeName": "France",
+        "numericCode": "250",
+        "currencies": [
+          {
+            "code": "EUR",
+            "name": "Euro",
+            "symbol": "€"
+          }
+        ],
+        "languages": [
+          {
+            "iso639_1": "fr",
+            "iso639_2": "fra",
+            "name": "French",
+            "nativeName": "français"
+          }
+        ],
+        "translations": {
+          "de": "Frankreich",
+          "es": "Francia",
+          "fr": "France",
+          "ja": "フランス",
+          "it": "Francia",
+          "br": "França",
+          "pt": "França",
+          "nl": "Frankrijk",
+          "hr": "Francuska",
+          "fa": "فرانسه"
+        },
+        "flag": "https://restcountries.eu/data/fra.svg",
+        "regionalBlocs": [
+          {
+            "acronym": "EU",
+            "name": "European Union",
+            "otherAcronyms": [],
+            "otherNames": []
+          }
+        ],
+        "cioc": "FRA"
+      },
+      "id": 6
+    },
+    {
+      "name": "Cancún",
+      "goal": "05/2022",
+      "country": {
+        "name": "Mexico",
+        "topLevelDomain": [
+          ".mx"
+        ],
+        "alpha2Code": "MX",
+        "alpha3Code": "MEX",
+        "callingCodes": [
+          "52"
+        ],
+        "capital": "Mexico City",
+        "altSpellings": [
+          "MX",
+          "Mexicanos",
+          "United Mexican States",
+          "Estados Unidos Mexicanos"
+        ],
+        "region": "Americas",
+        "subregion": "Central America",
+        "population": 122273473,
+        "latlng": [
+          23,
+          -102
+        ],
+        "demonym": "Mexican",
+        "area": 1964375,
+        "gini": 47,
+        "timezones": [
+          "UTC-08:00",
+          "UTC-07:00",
+          "UTC-06:00"
+        ],
+        "borders": [
+          "BLZ",
+          "GTM",
+          "USA"
+        ],
+        "nativeName": "México",
+        "numericCode": "484",
+        "currencies": [
+          {
+            "code": "MXN",
+            "name": "Mexican peso",
+            "symbol": "$"
+          }
+        ],
+        "languages": [
+          {
+            "iso639_1": "es",
+            "iso639_2": "spa",
+            "name": "Spanish",
+            "nativeName": "Español"
+          }
+        ],
+        "translations": {
+          "de": "Mexiko",
+          "es": "México",
+          "fr": "Mexique",
+          "ja": "メキシコ",
+          "it": "Messico",
+          "br": "México",
+          "pt": "México",
+          "nl": "Mexico",
+          "hr": "Meksiko",
+          "fa": "مکزیک"
+        },
+        "flag": "https://restcountries.eu/data/mex.svg",
+        "regionalBlocs": [
+          {
+            "acronym": "PA",
+            "name": "Pacific Alliance",
+            "otherAcronyms": [],
+            "otherNames": [
+              "Alianza del Pacífico"
+            ]
+          },
+          {
+            "acronym": "NAFTA",
+            "name": "North American Free Trade Agreement",
+            "otherAcronyms": [],
+            "otherNames": [
+              "Tratado de Libre Comercio de América del Norte",
+              "Accord de Libre-échange Nord-Américain"
+            ]
+          }
+        ],
+        "cioc": "MEX"
+      },
+      "id": 7
     }
   ]
 }
