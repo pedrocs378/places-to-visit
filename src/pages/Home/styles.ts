@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Select from 'react-select'
 import { shade } from 'polished'
+import { InputLabel } from '../../components/InputLabel'
 
 export const Container = styled.main``
 
@@ -49,38 +50,40 @@ export const SearchAreaContent = styled.div`
 	flex-direction: column;
 	justify-content: center;
 
-	> div {
-		width: 100%;
-		margin-bottom: 1.5rem;
-
-		display: flex;
-		flex-direction: column;
-
-		label {
-			color: var(--white);
-			margin-bottom: 3px;
-		}
-	}
-
 	@media (min-width: 720px) {
 		flex-direction: row;
 		align-items: center;
+	}
+`
 
-		> div {
-			margin-bottom: 0;
-			margin-right: 2.125rem;
+export const CountryInputLabel = styled(InputLabel)`
 
-			&.country {
-				max-width: 18.938rem;
-			}
-			&.place {
-				max-width: 28.438rem;
-			}
-			&.goal {
-				max-width: 14.875rem;
-			}
-		}
-		
+	@media (min-width: 720px) {
+		min-width: 11rem;
+	}
+
+	@media (min-width: 1180px) {
+		width: 18.938rem;	
+	}
+`
+
+export const PlaceInputLabel = styled(InputLabel)`
+	@media (min-width: 720px) {
+		min-width: 17.5rem;
+	}
+
+	@media (min-width: 1180px) {
+		width: 28.438rem;
+	}
+`
+
+export const GoalInputLabel = styled(InputLabel)`
+	@media (min-width: 720px) {
+		min-width: 7.6rem;
+	}
+
+	@media (min-width: 1180px) {
+		width: 14.875rem;
 	}
 `
 

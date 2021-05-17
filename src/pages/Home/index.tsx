@@ -4,6 +4,7 @@ import ReactInputMask from 'react-input-mask'
 import { Button } from '../../components/Button'
 import { Header } from '../../components/Header'
 import { Input } from '../../components/Input'
+import { InputLabel } from '../../components/InputLabel'
 import { PlaceCard } from '../../components/PlaceCard'
 import { UpdatePlaceModal } from '../../components/UpdatePlaceModal'
 
@@ -15,7 +16,10 @@ import {
 	PlaceCardsContainer,
 	SearchArea,
 	SearchAreaContent,
-	CountriesSelect
+	CountriesSelect,
+	CountryInputLabel,
+	PlaceInputLabel,
+	GoalInputLabel,
 } from './styles'
 
 interface CountrySelectProps {
@@ -112,11 +116,14 @@ export function Home() {
 			<Header />
 
 			<Container>
-				<SearchArea>
+				<SearchArea onSubmit={handleSubmit}>
 					<SearchAreaContent>
-						<div className="country">
-							<label htmlFor="country">País</label>
+						<CountryInputLabel
+							htmlFor="country"
+							label="País"
+						>
 							<CountriesSelect
+								id="country"
 								classNamePrefix="react-select"
 								isSearchable={false}
 								isClearable={true}
@@ -126,9 +133,12 @@ export function Home() {
 								value={countrySelected}
 								onChange={(data: CountrySelectProps | null) => setCountrySelected(data)}
 							/>
-						</div>
-						<div className="place">
-							<label htmlFor="place">Local</label>
+						</CountryInputLabel>
+						<PlaceInputLabel
+							htmlFor="place"
+							className="place"
+							label="Local"
+						>
 							<Input
 								hasMask={false}
 								id="place"
@@ -138,9 +148,11 @@ export function Home() {
 								value={place}
 								onChange={(event) => setPlace(event.target.value)}
 							/>
-						</div>
-						<div className="goal">
-							<label htmlFor="goal">Meta</label>
+						</PlaceInputLabel>
+						<GoalInputLabel
+							htmlFor="goal"
+							label="Meta"
+						>
 							<Input
 								hasMask
 								id="goal"
@@ -149,9 +161,9 @@ export function Home() {
 								value={goal}
 								onChange={(event) => setGoal(event.target.value)}
 							/>
-						</div>
+						</GoalInputLabel>
 
-						<Button type="submit" isLoading={isLoading} onClick={handleSubmit}>
+						<Button type="submit" isLoading={isLoading}>
 							Adicionar
 						</Button>
 					</SearchAreaContent>
